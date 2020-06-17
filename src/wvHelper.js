@@ -1,9 +1,10 @@
-const l = document.addEventListener;
+//イベントまるごと乗っ取られるといろいろ不都合なのでコメントアウト
+// const l = document.addEventListener;
 
-// Hijack event listener to prevent YouTube from stopping on blue window (lose focus)
-document.addEventListener = () => {
-    l.apply(document, arguments);
-};
+// // Hijack event listener to prevent YouTube from stopping on blue window (lose focus)
+// document.addEventListener = () => {
+//     l.apply(document, arguments);
+// };
 
 (function () {
     var ipcRenderer = require('electron').ipcRenderer;
