@@ -37,16 +37,6 @@ var clickHandler = function (name, menu) {
         case ('PIPDragArea'):
             document.body.classList.remove("PIP-mode");
             break;
-        case ('desktopModeButton'):
-            /* Not the best way, but fine for now */
-            var isActive = this.classList.contains('active');
-            AppConfig.update({ desktopMode : !isActive });
-            if (typeof window !== 'undefined' &&
-                typeof window.location !== 'undefined' &&
-                typeof window.location.reload == 'function') {
-                window.location.reload();
-            }
-            break;
     }
 };
 
@@ -199,14 +189,6 @@ exports.init = function (wv, controls) {
 
                 if (el.classList.contains("PIP-drag-area")) {
                     event = 'dblclick';
-                }
-
-                if (c === 'desktopModeButton') {
-                    if (config.userPreferences.desktopMode) {
-                        el.classList.add('active');
-                    } else {
-                        el.classList.remove('active');
-                    }
                 }
 
                 el.addEventListener(event, clickHandler.bind(el, c, menu), true);
