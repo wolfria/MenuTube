@@ -1,6 +1,6 @@
 var electron = require('electron');
 
-const { menubar } = require('menubar');
+var { menubar } = require('menubar');
 var ipcMain = require('electron').ipcMain;
 
 var AppConfig = require('./config.js');
