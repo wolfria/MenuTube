@@ -13,16 +13,16 @@ if (typeof __dirname !== 'undefined') {
  * NOT VALID ANYMORE - NO LOCAL SETTINGS NO PREFERENCES PAGE!
  * */
 var userPreferences = {
-    alwaysOnTop : true,
-    windowResize : true,
-    windowDraggable : true,
-    windowPosition : 'trayCenter',
-    globalShortcuts : true,
-    PIPModeByDefault : false,
-    highlightTray : true,
-    rememberBounds : true,
-    theme : 'red-theme',
-    desktopMode : false,
+    alwaysOnTop: true,
+    windowResize: true,
+    windowDraggable: true,
+    windowPosition: 'trayCenter',
+    globalShortcuts: true,
+    PIPModeByDefault: false,
+    highlightTray: true,
+    rememberBounds: true,
+    theme: 'red-theme',
+    desktopMode: false,
 };
 
 var defaults = {
@@ -68,7 +68,7 @@ function AppConfig() {
                 all: Object.assign(defaults, userPreferences),
                 userPreferences: userPreferences,
                 defaults: defaults
-            }
+            };
         }
     });
 
