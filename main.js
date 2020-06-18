@@ -1,6 +1,8 @@
 var electron = require('electron');
 
-var { menubar } = require('menubar');
+var {
+    menubar
+} = require('menubar');
 var ipcMain = require('electron').ipcMain;
 
 var AppConfig = require('./config.js');
@@ -18,11 +20,9 @@ var accelerators = [
     'Cmd+Ctrl+y'
 ];
 
-var defaultMenu = [
-    {
+var defaultMenu = [{
         label: 'Edit',
-        submenu: [
-            {
+        submenu: [{
                 label: 'Undo',
                 accelerator: 'CmdOrCtrl+Z',
                 role: 'undo'
@@ -59,8 +59,7 @@ var defaultMenu = [
     },
     {
         label: 'View',
-        submenu: [
-            {
+        submenu: [{
                 label: 'Reload',
                 accelerator: 'CmdOrCtrl+R',
                 click: function (item, focusedWindow) {
@@ -114,7 +113,9 @@ mb.on('ready', function ready() {
 
     var registerGlobalShortcuts = function () {
         var shortcutsHandler = function (accelerator) {
-            mb.window.webContents.send('global-shortcut', { accelerator: accelerator });
+            mb.window.webContents.send('global-shortcut', {
+                accelerator: accelerator
+            });
         };
 
         for (var i = 0; i < accelerators.length; i++) {
@@ -140,7 +141,9 @@ mb.on('ready', function ready() {
             }
         }
 
-        mb.window.webContents.send('on-preference-change', { theme: config.theme });
+        mb.window.webContents.send('on-preference-change', {
+            theme: config.theme
+        });
 
         AppConfig.update(config);
     });

@@ -32,63 +32,62 @@ var clickHandler = function (name, menu) {
 
 var dynamicLabel = 'Check releases and notes';
 
-var defaultMenuItems = [
-    {
-        label : 'Open in browser',
-        click : function () {
+var defaultMenuItems = [{
+        label: 'Open in browser',
+        click: function () {
             hideAndPause();
             shell.openExternal(urlHandler.getCurrentURL());
         },
-        role : 'help'
+        role: 'help'
     },
     {
-        type : 'separator'
+        type: 'separator'
     },
     {
-        label : 'Video controls',
-        click : function () {
+        label: 'Video controls',
+        click: function () {
             var win = new BrowserWindow({
-                frame : true
+                frame: true
             });
 
             hideAndPause();
 
             var path = app.getAppPath();
             win.loadURL('file://' + path + '/views/preferences.html');
-            win.show()
+            win.show();
         },
-        role : 'help'
+        role: 'help'
     },
     {
-        label : dynamicLabel,
-        click : function () {
+        label: dynamicLabel,
+        click: function () {
             hideAndPause();
             shell.openExternal('https://github.com/edanchenkov/MenuTube/releases');
         },
-        role : 'help'
+        role: 'help'
     },
     {
-        type : 'separator'
+        type: 'separator'
     },
     {
-        label : 'Reload',
-        click : function () {
+        label: 'Reload',
+        click: function () {
             if (typeof window !== 'undefined' &&
                 typeof window.location !== 'undefined' &&
                 typeof window.location.reload == 'function') {
                 window.location.reload();
             }
         },
-        role : 'help',
-        accelerator : 'Cmd+R'
+        role: 'help',
+        accelerator: 'Cmd+R'
     },
     {
-        label : 'Quit',
-        click : function () {
+        label: 'Quit',
+        click: function () {
             app.quit();
         },
-        role : 'help',
-        accelerator : 'Cmd+Q'
+        role: 'help',
+        accelerator: 'Cmd+Q'
     }
 ];
 
@@ -103,16 +102,14 @@ var buildMenu = function (menu, menuItems) {
 
     for (var i = 0; i < menuItems.length; i++) {
         var mi = menuItems[i];
-        menu.append(new MenuItem(
-            {
-                label : mi.label,
-                click : mi.click,
-                type : mi.type,
-                role : mi.role,
-                accelerator : mi.accelerator,
-                submenu : mi.submenu
-            })
-        );
+        menu.append(new MenuItem({
+            label: mi.label,
+            click: mi.click,
+            type: mi.type,
+            role: mi.role,
+            accelerator: mi.accelerator,
+            submenu: mi.submenu
+        }));
     }
 };
 

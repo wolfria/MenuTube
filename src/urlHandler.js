@@ -3,7 +3,7 @@ var AppConfig = require('./../config.js');
 var config = AppConfig.store;
 
 module.exports = {
-    init : function (wv) {
+    init: function (wv) {
         var remote = require('electron').remote;
         var shell = remote.shell;
 
@@ -65,14 +65,14 @@ module.exports = {
          *                     END
          * */
     },
-    getCurrentURL : function () {
+    getCurrentURL: function () {
         return urlHandler.currentURL;
     },
-    isVideoURL : function (url) {
+    isVideoURL: function (url) {
         return url.indexOf('.youtube.com/') > -1 &&
             url.indexOf('watch?v=') > -1;
     },
-    isAllowedURL : function (url) {
+    isAllowedURL: function (url) {
         return (url.indexOf('.youtube.com/') > -1) ||
             (url.indexOf('accounts.google.com') > -1);
     }

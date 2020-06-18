@@ -36,15 +36,17 @@ exports.continueInit = function (wv, controls) {
         var uiControls = require('./ui-controls.js');
         var urlHandler = require('./urlHandler.js');
 
-        var options = { userAgent: config.defaults.userAgent };
+        var options = {
+            userAgent: config.defaults.userAgent
+        };
 
         if (config.userPreferences.desktopMode) {
             options.userAgent = config.defaults.desktopUserAgent;
         }
 
         /* This all is not the best approach for handling loading state,
-        *   but it is enough for now
-        * */
+         *   but it is enough for now
+         * */
         var ts = Date.now();
         var splashScreen = document.querySelector('.splash-screen');
         var hideSplashScreen = function () {
