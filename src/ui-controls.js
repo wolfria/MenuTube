@@ -68,8 +68,6 @@ var defaultMenuItems = [
         label : 'Video controls',
         click : function () {
             var win = new BrowserWindow({
-                // width : 800,
-                // height : 600,
                 frame : true
             });
 
@@ -81,22 +79,6 @@ var defaultMenuItems = [
         },
         role : 'help'
     },
-    // {
-    //     label : 'Preferences',
-    //     click : function () {
-    //         var win = new BrowserWindow({
-    //             // width : 800,
-    //             // height : 600,
-    //             frame : true
-    //         });
-    //
-    //         hideAndPause();
-    //         var path = app.getAppPath();
-    //         win.loadURL('file://' + path + '/views/preferences.html');
-    //         win.show()
-    //     },
-    //     role : 'help'
-    // },
     {
         label : dynamicLabel,
         click : function () {
