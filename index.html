@@ -193,21 +193,9 @@
             <div class="column is-three-quarters">
                 <div class="control is-grouped">
                     <p class="control has-addons is-9">
-                        <a id="back-btn" class="button">
-                        <span class="icon is-small">
-                            <i class="fa fa-chevron-left"
-                               aria-hidden="true"></i>
-                        </span>
-                        </a>
                         <a id="refresh-btn" class="button">
                         <span class="icon is-small">
                             <i class="fa fa-refresh" aria-hidden="true"></i>
-                        </span>
-                        </a>
-                        <a id="forward-btn" class="button">
-                        <span class="icon is-small">
-                            <i class="fa fa-chevron-right"
-                               aria-hidden="true"></i>
                         </span>
                         </a>
                     </p>
@@ -244,9 +232,7 @@
                 wv.addEventListener('dom-ready', function () {
                     if (!initialised) {
                         var controls = {
-                            backButton : document.getElementById('back-btn'),
                             refreshButton : document.getElementById('refresh-btn'),
-                            forwardButton : document.getElementById('forward-btn'),
                             preferenceButton : document.getElementById('pref-btn'),
                             PIPMode : document.getElementById('PIP-btn'),
                             PIPDragArea : document.querySelector('.PIP-drag-area'),

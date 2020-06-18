@@ -14,18 +14,8 @@ var wv = window.wv;
 
 var clickHandler = function (name, menu) {
     switch (name) {
-        case ('backButton'):
-            if (wv.canGoBack()) {
-                wv.goBack();
-            }
-            break;
         case ('refreshButton'):
             wv.reload();
-            break;
-        case ('forwardButton'):
-            if (wv.canGoForward) {
-                wv.goForward();
-            }
             break;
         case ('preferenceButton'):
             menu.popup(remote.getCurrentWindow());
