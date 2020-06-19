@@ -35,8 +35,8 @@ var defaults = {
     preloadWindow: true,
     showDockIcon: false,
     browserWindow: {
-        width: 720,
-        height: 400,
+        width: 426,
+        height: 240,
         webPreferences: {
             nodeIntegration: true,
             webviewTag: true
